@@ -5,11 +5,12 @@
 {% endblock %}
 
 {% block content %}
-    <h1>{{ profile.name }}</h1>
+    <h1>Detalhes do Perfil</h1>
+    <h2>{{ profile.name }}</h2>
     <a href="{{ profile.github }}">GitHub</a>
     <a href="{{ profile.linkedin }}">LinkedIn</a>
     <p>{{ profile.bio }}</p>
-
+    <h2>Projetos</h2>
     <ul>
     {% for project in projects %}
         <li>
@@ -21,4 +22,12 @@
         </li>
     {% endfor %}
     </ul>
+    <h2>Certificados</h2>
+    <ul>
+    {% for certificate in certificates %}
+        <li>
+        {{ certificate.name }}
+        {{ certificate.certifying_institution }}
+        </li>
+    {% endfor %}
 {% endblock %}
