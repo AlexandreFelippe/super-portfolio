@@ -40,7 +40,7 @@ class Certificate(models.Model):
         related_name='certificates'
         )
     timestamp = models.DateTimeField(auto_now_add=True)
-    profile = models.ManyToManyField(Profile, related_name='certificates')
+    profiles = models.ManyToManyField(Profile, related_name='certificates')
 
     def __str__(self):
         return self.name
