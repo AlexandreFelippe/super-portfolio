@@ -10,6 +10,16 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from django.shortcuts import render
 
 
+def index(request):
+    context = {
+        'profile': Profile.objects.get(pk=3),
+        'projects': Project.objects.all(),
+        'certificates': Certificate.objects.all(),
+        'certifying_institutions': CertifyingInstitution.objects.all(),
+    }
+    return render(request, 'profile_detail.html', context)
+
+
 class ProfileViewSet(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer

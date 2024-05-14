@@ -11,6 +11,7 @@ from rest_framework_simplejwt.views import (
     TokenVerifyView,
 )
 
+
 router = DefaultRouter()
 router.register(r"profiles", ProfileViewSet)
 router.register(r"projects", ProjectViewSet)

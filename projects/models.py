@@ -6,6 +6,7 @@ class Profile(models.Model):
     github = models.URLField(max_length=500, blank=False)
     linkedin = models.URLField(max_length=500, blank=False)
     bio = models.TextField(max_length=500, blank=False)
+    avatar = models.ImageField(upload_to='projects/static/img', blank=True)
 
     def __str__(self):
         return self.name
