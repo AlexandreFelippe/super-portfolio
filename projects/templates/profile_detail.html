@@ -6,42 +6,44 @@
 {% endblock %}
 
 {% block content %}
-    <body class="body, a">
+    <body>
         <h1 class="centraliza-titulos">{{ profile.name }}</h1>
-            <div class="profile-infos-container">
-            <h2 style="display: flex; flex-direction: column; align-items: center; color: #AAC4E4;">
-                <img src="{% static 'img/Alexandre-dirigindo.png' %}" alt="avatar" style="width: 100px; height: auto;">
+        <div class="profile-infos-container">
+            <h2 class="profile-avatar">
+                <img src="{% static profile.avatar %}" alt="avatar">
             </h2>
-                <a style="display: flex; flex-direction: column; align-items: center; color: #AAC4E4" href="{{ profile.github }}">
-                <img src="{% static 'img/github-icon-branco.png' %}" alt="logo github" style="width: 40px; height: auto;">
-                <p>GitHub</p>
+            <div class="profile-links">
+                <a class="profile-link" href="{{ profile.github }}">
+                    <img src="{% static 'img/github-icon-branco.png' %}" alt="logo github" class="icon">
+                    <p>GitHub</p>
                 </a>
-                <a style="display: flex; flex-direction: column; align-items: center; color: #AAC4E4" href="{{ profile.linkedin }}">
-                <img src="{% static 'img/linkedin-icon-circular.png' %}" alt="logo linkedin" style="width: 40px; height: auto;">
-                <p>LinkedIn</p>
+                <a class="profile-link" href="{{ profile.linkedin }}">
+                    <img src="{% static 'img/linkedin-icon-circular.png' %}" alt="logo linkedin" class="icon">
+                    <p>LinkedIn</p>
                 </a>
-                <p class="profile-bio, bio-container">{{ profile.bio }}</p>
             </div>
-        <h2 class="section-title, centraliza-titulos">Projetos</h2>
-            <ul class="projects-container">
+            <p class="profile-bio">{{ profile.bio }}</p>
+        </div>
+        <h2 class="section-title">Projetos</h2>
+        <ul class="projects-container">
             {% for project in projects %}
-                <li class="project-card">
-                <p>Nome: {{ project.name }}</p>
-                <p>Descrição: {{ project.description }}</p>
+            <li class="project-card">
+                <p class="project-title">Nome: {{ project.name }}</p>
+                <p class="project-description">Descrição: {{ project.description }}</p>
                 <a class="project-github-url" href="{{ project.github_url }}">Github</a>
-                <p>Skills: {{ project.keyword }}</p>
-                <p class="project-key-skill"></p>Linguagem Principal: {{ project.key_skill }}
-                </li>
+                <p class="project-keyword">Skills: {{ project.keyword }}</p>
+                <p class="project-key-skill">Linguagem Principal: {{ project.key_skill }}</p>
+            </li>
             {% endfor %}
-            </ul>
-        <h2 class="section-title, centraliza-titulos">Certificados</h2>
-            <ul class="certificates-container">
+        </ul>
+        <h2 class="section-title">Certificados</h2>
+        <div class="certificates-container">
             {% for certificate in certificates %}
-                <li>
-                Certificado: {{ certificate.name }}
-                Certificadora: {{ certificate.certifying_institution }}
-                </li>
+            <li class="certificate-card">
+                <p class="certificate-title">Certificado: {{ certificate.name }}</p>
+                <p class="certificate-description">Certificadora: {{ certificate.certifying_institution }}</p>
+            </li>
             {% endfor %}
-            </ul>
+        </div>
     </body>
 {% endblock %}

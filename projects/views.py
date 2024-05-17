@@ -12,11 +12,13 @@ from django.shortcuts import render
 
 def index(request):
     context = {
-        'profile': Profile.objects.get(pk=3),
+        'profile': Profile.objects.get(pk=1),
         'projects': Project.objects.all(),
         'certificates': Certificate.objects.all(),
         'certifying_institutions': CertifyingInstitution.objects.all(),
     }
+    print(Profile.objects.get(pk=1))
+    print("_____________")
     return render(request, 'profile_detail.html', context)
 
 

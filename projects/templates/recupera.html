@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Profile Details
+{% endblock %}
+
+{% block content %}
+    <body class="body, a">
+        <h1 class="centraliza-titulos">{{ profile.name }}</h1>
+            <div class="profile-infos-container">
+            <h2 style="display: flex; flex-direction: column; align-items: center; color: #AAC4E4;">
+                <img src="{% static 'img/Alexandre-dirigindo.png' %}" alt="avatar" style="width: 100px; height: auto;">
+            </h2>
+                <a style="display: flex; flex-direction: column; align-items: center; color: #AAC4E4" href="{{ profile.github }}">
+                <img src="{% static 'img/github-icon-branco.png' %}" alt="logo github" style="width: 40px; height: auto;">
+                <p>GitHub</p>
+                </a>
+                <a style="display: flex; flex-direction: column; align-items: center; color: #AAC4E4" href="{{ profile.linkedin }}">
+                <img src="{% static 'img/linkedin-icon-circular.png' %}" alt="logo linkedin" style="width: 40px; height: auto;">
+                <p>LinkedIn</p>
+                </a>
+                <p class="profile-bio, bio-container">{{ profile.bio }}</p>
+            </div>
+        <h2 class="section-title, centraliza-titulos">Projetos</h2>
+            <ul class="projects-container">
+            {% for project in projects %}
+                <li class="project-card">
+                <p>Nome: {{ project.name }}</p>
+                <p>Descrição: {{ project.description }}</p>
+                <a class="project-github-url" href="{{ project.github_url }}">Github</a>
+                <p>Skills: {{ project.keyword }}</p>
+                <p class="project-key-skill"></p>Linguagem Principal: {{ project.key_skill }}
+                </li>
+            {% endfor %}
+            </ul>
+        <h2 class="section-title, centraliza-titulos">Certificados</h2>
+            <ul class="certificates-container">
+            {% for certificate in certificates %}
+                <li>
+                Certificado: {{ certificate.name }}
+                Certificadora: {{ certificate.certifying_institution }}
+                </li>
+            {% endfor %}
+            </ul>
+    </body>
+{% endblock %}
+
+
+html {
+    height: 100%;
+    margin: 0%;
+    padding: 0;
+}
+
+a {
+    color: #F6FAFC;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    background-color: #333333;
+    height: 100%;
+}
+
+.profile-infos-container {
+    align-items: center;
+    background-color: #333333;
+    display: flex;
+    color: #fff;
+    justify-content: space-around;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.profile-infos {
+    font-size: 18px;
+}
+
+.profile-infos-image {
+    width: 40px;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.main-container {
+    /* background-color: rgb(128, 153, 111); */
+    display: flex;
+    padding: 20px;
+}
+
+.certificates-container, .bio-container {
+    align-items:self-start;
+    display: flex;
+    background-color: #333333;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    color: #AAC4E4;
+    flex-direction: column;
+    height: fit-content;
+    padding: 20px;
+    text-align: left;
+    width: 20%;
+}
+
+.section-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.certificates-institution {
+    background-color: #aac4e465;
+    color: #001A3B;
+    cursor: default;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    width: 80%;
+}
+
+.project-card {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: 333333;
+    color: #AAC4E4;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 20px;
+}
+
+.project-title {
+    color: #001A3B;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.project-description, .project-github-url, .project-keyword {
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: default;
+}
+
+.project-github-url {
+    background-color: #0055B7;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 10px;
+    width: fit-content;
+}
+
+.project-github-url:hover {
+    background-color: #AAC4E4;
+    color: #001A3B;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.project-key-skill {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+    cursor: default;
+}
+
+.bio-container {
+    width: 30%;
+}
+
+#profile-bio {
+    color: #000a18;
+}
+
+.img-small {
+    width: 10px !important;
+    height: auto !important;
+}
+
+.centraliza-titulos {
+    text-align: center;
+    color: #a2b1c4d2;
+}
