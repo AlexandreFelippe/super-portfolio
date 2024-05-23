@@ -28,8 +28,8 @@
         <ul class="projects-container">
             {% for project in projects %}
             <li class="project-card">
-                <p class="project-title">Nome: {{ project.name }}</p>
-                <p class="project-description">Descrição: {{ project.description }}</p>
+                <p class="project-title">{{ project.name }}</p>
+                <p class="project-description">{{ project.description }}</p>
                 <a class="project-github-url" href="{{ project.github_url }}">Github</a>
                 <p class="project-keyword">Skills: {{ project.keyword }}</p>
                 <p class="project-key-skill">Linguagem Principal: {{ project.key_skill }}</p>
