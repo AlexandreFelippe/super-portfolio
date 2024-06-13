@@ -127,6 +127,7 @@ ul, ol, li {
 
 /* Centered titles */
 .centraliza-titulos {
+    font-size: 1.5em;
     text-align: center;
     color: #AAC4E4;
     margin: 40px 0;

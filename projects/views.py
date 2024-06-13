@@ -17,8 +17,6 @@ def index(request):
         'certificates': Certificate.objects.all(),
         'certifying_institutions': CertifyingInstitution.objects.all(),
     }
-    print(Profile.objects.get(pk=1))
-    print("_____________")
     return render(request, 'profile_detail.html', context)
 
 
