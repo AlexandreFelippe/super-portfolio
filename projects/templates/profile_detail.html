@@ -6,44 +6,52 @@
 {% endblock %}
 
 {% block content %}
-    <body>
-        <h1 class="centraliza-titulos">{{ profile.name }}</h1>
-            <div class="profile-infos-container">
-                <h2 class="profile-avatar">
-                    <img src="{% static profile.avatar %}" alt="avatar">
-                </h2>
-                <div class="profile-links">
-                    <a class="profile-link" href="{{ profile.github }}">
-                        <img src="{% static 'img/github-icon-branco.png' %}" alt="logo github" class="icon">
-                        <p>GitHub</p>
-                    </a>
-                    <a class="profile-link" href="{{ profile.linkedin }}">
-                        <img src="{% static 'img/linkedin-icon-circular.png' %}" alt="logo linkedin" class="icon">
-                        <p>LinkedIn</p>
-                    </a>
-                </div>
-                <p class="profile-bio">{{ profile.bio }}</p>
+    <header class="profile-header">
+        <div class="profile-avatar">
+            <img src="{% static profile.avatar %}" alt="avatar">
+        </div>
+        <p class="profile-name">{{ profile.name }}</p>
+        <div class="profile-links-container">
+            <div class="profile-links-row">
+                <a class="profile-link" href="{{ profile.github }}">
+                    <img src="{% static 'img/github-icon-branco.png' %}" alt="logo github" class="icon">
+                    <p>GitHub</p>
+                </a>
+                <a class="profile-link" href="{{ profile.linkedin }}">
+                    <img src="{% static 'img/linkedin-icon-circular.png' %}" alt="logo linkedin" class="icon">
+                    <p>LinkedIn</p>
+                </a>
             </div>
+            <a class="profile-link" href="mailto:{{ profile.email }}">
+                <img src="{% static 'img/email-icon.png' %}" alt="logo email" class="icon">
+                <p>{{ profile.email }}</p>
+            </a>
+        </div>
+    </header>
+    <body>
+        <div class="profile-infos-container">
+            <p class="profile-bio">{{ profile.bio }}</p>
+        </div>
         <h2 class="section-title">Projetos</h2>
-            <ul class="projects-container">
-                {% for project in projects %}
-                <li class="project-card">
-                    <p class="project-title">{{ project.name }}</p>
-                    <p class="project-description">{{ project.description }}</p>
-                    <a class="project-github-url" href="{{ project.github_url }}">Github</a>
-                    <p class="project-keyword">Skills: {{ project.keyword }}</p>
-                    <p class="project-key-skill">Linguagem Principal: {{ project.key_skill }}</p>
-                </li>
-                {% endfor %}
-            </ul>
+        <ul class="projects-container">
+            {% for project in projects %}
+            <li class="project-card">
+                <p class="project-title">{{ project.name }}</p>
+                <p class="project-description">{{ project.description }}</p>
+                <a class="project-github-url" href="{{ project.github_url }}">Github</a>
+                <p class="project-keyword">Skills: {{ project.keyword }}</p>
+                <p class="project-key-skill">Linguagem Principal: {{ project.key_skill }}</p>
+            </li>
+            {% endfor %}
+        </ul>
         <h2 class="section-title">Certificados</h2>
-            <div class="certificates-container">
-                {% for certificate in certificates %}
-                <li class="certificate-card">
-                    <p class="certificate-title">Certificado: {{ certificate.name }}</p>
-                    <p class="certificate-description">Certificadora: {{ certificate.certifying_institution }}</p>
-                </li>
-                {% endfor %}
+        <div class="certificates-container">
+            {% for certificate in certificates %}
+            <li class="certificate-card">
+                <p class="certificate-title">Certificado: {{ certificate.name }}</p>
+                <p class="certificate-description">Certificadora: {{ certificate.certifying_institution }}</p>
+            </li>
+            {% endfor %}
         </div>
     </body>
 {% endblock %}

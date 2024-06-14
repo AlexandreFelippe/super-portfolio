@@ -7,6 +7,11 @@ class Profile(models.Model):
     linkedin = models.URLField(max_length=500, blank=False)
     bio = models.TextField(max_length=500, blank=False)
     avatar = models.ImageField(upload_to='img', blank=True)
+    email = models.EmailField(
+        max_length=100,
+        blank=False,
+        default='alemfelippe@gmail.com'
+        )
 
     def __str__(self):
         return self.name
