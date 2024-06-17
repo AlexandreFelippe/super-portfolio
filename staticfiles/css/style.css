@@ -48,7 +48,7 @@ ul, ol, li {
     flex-grow: 1;
     text-align: center;
     color: #AAC4E4;
-    font-size: large;
+    font-size: 40px !important;
 }
 
 .profile-links-container {
