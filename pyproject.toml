@@ -23,6 +23,7 @@ dependencies = [
     "mysqlclient==2.2.0",
     "Pillow==10.0.0",
     "whitenoise==6.5.0",
+    "gunicorn==22.0.0",
 ]
 
 [tool.pytest.ini_options]
