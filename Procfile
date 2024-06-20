@@ -1,1 +1,1 @@
-web: gunicorn super_portfolio.wgsi --log-file -
+web: gunicorn super_portfolio.wsgi --log-file -
