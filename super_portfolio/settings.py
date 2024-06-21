@@ -99,14 +99,7 @@ WSGI_APPLICATION = "super_portfolio.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "super_portfolio_database",
-        "USER": "root",
-        "PASSWORD": "password",
-        "HOST": "127.0.0.1",
-        "PORT": "3306",
-    }
+    "default": dj_database_url.parse('mysql://gpsd9vfuxwpqe0vp:r1rcso01mfwk45mu@uoa25ublaow4obx5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/qlw0ofkr0u7cwk6p') # noqa
 }
 
 
