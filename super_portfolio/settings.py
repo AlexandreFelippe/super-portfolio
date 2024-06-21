@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -99,7 +100,8 @@ WSGI_APPLICATION = "super_portfolio.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    "default": dj_database_url.parse('mysql://gpsd9vfuxwpqe0vp:r1rcso01mfwk45mu@uoa25ublaow4obx5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/qlw0ofkr0u7cwk6p') # noqa
+    "default": dj_database_url.parse(
+        'mysql://gpsd9vfuxwpqe0vp:r1rcso01mfwk45mu@uoa25ublaow4obx5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/qlw0ofkr0u7cwk6p') # noqa
 }
 
 
