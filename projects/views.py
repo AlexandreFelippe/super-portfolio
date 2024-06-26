@@ -8,11 +8,16 @@ from .serializers import (
 )
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from django.shortcuts import render
+from django.core.exceptions import ObjectDoesNotExist
 
 
 def index(request):
+    try:
+        profile = Profile.objects.get(pk=1)
+    except ObjectDoesNotExist:
+        profile = None
     context = {
-        'profile': Profile.objects.get(pk=1),
+        'profile': profile,
         'projects': Project.objects.all(),
         'certificates': Certificate.objects.all(),
         'certifying_institutions': CertifyingInstitution.objects.all(),

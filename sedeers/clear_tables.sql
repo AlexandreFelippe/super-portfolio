@@ -1,0 +1,5 @@
+TRUNCATE TABLE projects_certifyinginstitution;
+TRUNCATE TABLE projects_certificate;
+TRUNCATE TABLE projects_project;
+TRUNCATE TABLE projects_profile;
+TRUNCATE TABLE projects_certificate_profile;

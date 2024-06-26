@@ -1,5 +1,5 @@
-INSERT INTO projects_project (id, name, description, github_url, keyword, key_skill, profile_id)
-                                   VALUES (1, 'Zoo Functions', 'Desenvolvido para controlar as atividades em um zoológico, desde a hierarquia de funcionários, horários de funcionamento, localização dos animais, preços por horário e idades e todo o funcionamento.
+INSERT INTO projects_project (name, description, github_url, keyword, key_skill, profile_id)
+                                   VALUES ('Zoo Functions', 'Desenvolvido para controlar as atividades em um zoológico, desde a hierarquia de funcionários, horários de funcionamento, localização dos animais, preços por horário e idades e todo o funcionamento.
 Construído em JavaScript, HTML e CSS.', 'https://github.com/AlexandreFelippe/projetos_Trybe', 'ES-6, HOF´s, Testes Unitários', 'JavaScript ES-6', 1);
-INSERT INTO projects_project (id, name, description, github_url, keyword, key_skill, profile_id)
-                                   VALUES (2, 'Controle Financeiro Pessoal', 'Projeto desenvolvido em Python, com interface em tkinter, o objetivo é registrar despesas e receitas, organizando por categoria, descrição e data, para futuramente criar relatórios analíticos', 'https://github.com/AlexandreFelippe/Controle-de-Receitas-e-Despesas/tree/db-view-template-version04', 'tkinter, SQLite', 'Python', 1);
+INSERT INTO projects_project (name, description, github_url, keyword, key_skill, profile_id)
+                                   VALUES ('Controle Financeiro Pessoal', 'Projeto desenvolvido em Python, com interface em tkinter, o objetivo é registrar despesas e receitas, organizando por categoria, descrição e data, para futuramente criar relatórios analíticos', 'https://github.com/AlexandreFelippe/Controle-de-Receitas-e-Despesas/tree/db-view-template-version04', 'tkinter, SQLite', 'Python', 1);
