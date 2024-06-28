@@ -42,6 +42,5 @@ pytz==2024.1
 six==1.16.0
 soupsieve==2.5
 sqlparse==0.5.0
-super-portfolio @ file:///home/alexandre/python/projetos/python-033-python-projeto-super-portfolio
 typing_extensions==4.12.2
 whitenoise==6.5.0
