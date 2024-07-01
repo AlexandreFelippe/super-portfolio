@@ -88,6 +88,13 @@ ul, ol, li {
     text-align: center;
 }
 
+.profile-infos-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
 /* Section titles */
 .section-title {
     font-size: 1.5em;
